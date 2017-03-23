@@ -1,4 +1,4 @@
-const colors = require('../styles/colors')
+const colors = require('../../styles/colors')
 const cmz = require('cmz')
 
 const styles = cmz('Color', {

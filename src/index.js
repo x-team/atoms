@@ -1,16 +1,14 @@
-const atom = require('./templates/atom')
-
 const components = [
-	{
-		name: 'Colors',
-		description: 'These are the standard colors used.',
-		component: require('./templates/color.js')()
-	}
+  {
+    name: 'Colors',
+    description: 'These are the standard colors used.',
+    component: require('./templates/ui-library/color.js')()
+  }
 ]
 
-const html = components.map(function (component) {
-	return atom(component)
-}).join('')
+const html = require('./templates/ui-library')({
+  components: components
+})
 
 if (!module.parent) {
   if (typeof document !== 'undefined') {

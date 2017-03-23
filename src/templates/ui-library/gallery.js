@@ -1,7 +1,11 @@
 const cmz = require('cmz')
 
 const styles = cmz('Atom', {
-	root: `
+	parent: `
+		margin-left: 15em;
+		padding: 1em 2em;
+	`,
+	atom: `
 		margin: 1em 0;
 	`,
 	name: `
@@ -18,12 +22,20 @@ const styles = cmz('Atom', {
 	`
 })
 
-module.exports = function (props) {
+function atom (props) {
 	return `
-		<div class="${styles.root}">
-			<h2 class="${styles.name}">${props.name}</h2>
+		<div class="${styles.atom}">
+			<h2 id="#${props.name.toLowerCase()}" class="${styles.name}">${props.name}</h2>
 			<p class="${styles.description}">${props.description}</p>
 			${props.component}
 		</div>
 	`
+}
+
+module.exports = function (props) {
+	const atoms = props.components.map(function (component) {
+		return atom(component)
+	}).join('\n')
+
+	return `<div class="${styles.parent}">${atoms}</div>`
 }
