@@ -1,3 +1,5 @@
+const css = require('./assets/base.css')
+
 const components = [
   {
     name: 'Colors',

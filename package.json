@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "setup": "mkdir dist && touch dist/bundle.js",
-    "build": "browserify -o dist/bundle.js src/index.js",
-    "start": "watchify -v -p browserify-hmr -o dist/bundle.js src/index.js & node server.js & wait",
+    "build": "browserify -t browserify-css -o dist/bundle.js src/index.js",
+    "start": "watchify -v -p browserify-hmr -t browserify-css -o dist/bundle.js src/index.js & node server.js & wait",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,9 +18,15 @@
   "bugs": {
     "url": "https://github.com/x-team/atoms/issues"
   },
+  "browserify-css": {
+    "autoInject": true,
+    "minify": true,
+    "rootDir": "."
+  },
   "homepage": "https://github.com/x-team/atoms#readme",
   "devDependencies": {
     "browserify": "^13.1.0",
+    "browserify-css": "^0.10.0",
     "browserify-hmr": "^0.3.1",
     "ecstatic": "^2.1.0",
     "open": "0.0.5",

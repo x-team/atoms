@@ -1,0 +1,23 @@
+@import "./normalize.css";
+
+::-moz-selection {
+	background: rgb(255,89,101);
+	color: #fff;
+}
+
+::selection {
+	background: #ff5965;
+	color: #fff;
+}
+
+:focus {
+	outline-color: #ff5965;
+}
+
+* {
+	font-family: 'Source Sans Pro';
+}
+
+body {
+	background: #f3f2f7;
+}
