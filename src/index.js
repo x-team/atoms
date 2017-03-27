@@ -10,6 +10,11 @@ const components = [
     name: 'Button',
     description: 'Buttons can be attached to `a` and `button` elements.',
     component: require('./templates/button')()
+  },
+  {
+    name: 'Grid',
+    description: 'Flex-based grid system',
+    component: require('./templates/grid')()
   }
 ]
 
