@@ -5,6 +5,11 @@ const components = [
     name: 'Colors',
     description: 'These are the standard colors used.',
     component: require('./templates/ui-library/color.js')()
+  },
+  {
+    name: 'Button',
+    description: 'Buttons can be attached to `a` and `button` elements.',
+    component: require('./templates/button')()
   }
 ]
 
