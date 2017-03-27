@@ -24,22 +24,24 @@ styles.defaultButton = cmz('button', `
 `)
 
 styles.bigButton = cmz(`
-	border-radius: 3px;
-	border-width: 2px;
-	font-weight: bold;
-	font-size: 1rem;
-	padding: .75em 2.4em;
-	text-transform: uppercase;
-
-	@media screen and (min-width: 1024px) {
+	& {
 		border-radius: 3px;
-		border-width: 3px;
+		border-width: 2px;
+		font-weight: bold;
 		font-size: 1rem;
-		padding: .9em 2.4em;
-	}
+		padding: .75em 2.4em;
+		text-transform: uppercase;
 
-	@media screen and (min-width: 1280px) {
-		font-size: 1.2rem;
+		@media screen and (min-width: 1024px) {
+			border-radius: 3px;
+			border-width: 3px;
+			font-size: 1rem;
+			padding: .9em 2.4em;
+		}
+
+		@media screen and (min-width: 1280px) {
+			font-size: 1.2rem;
+		}
 	}
 `).compose([
 	styles.defaultButton,

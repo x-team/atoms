@@ -47,10 +47,12 @@ styles.getBreakpoints = function (breakpointConfigs, shouldReverse) {
 		offset = breakpoint.offset && breakpoint.offset < GRID_DIVISION ? breakpoint.offset / GRID_DIVISION * 100 + '%' : 0
 
 		return cmz(`
-			@media only screen and (min-width: ${deviceWidths[breakpoint.breakpoint]}) {
-				flex-basis: ${colspan};
-				margin-left: ${offset};
-				width: ${colspan};
+			& {
+				@media only screen and (min-width: ${deviceWidths[breakpoint.breakpoint]}) {
+					flex-basis: ${colspan};
+					margin-left: ${offset};
+					width: ${colspan};
+				}
 			}
 		`)
 	})
