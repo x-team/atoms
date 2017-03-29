@@ -33,6 +33,7 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "cmz": "^2.4.1"
   }
 }

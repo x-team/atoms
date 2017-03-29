@@ -1,24 +1,25 @@
 const styles = require('../styles/button')
+const classnames = require('classnames')
 
 module.exports = function () {
 	return `
 		<div>
-			<button class="${styles.defaultButton}">Default Button</button>
+			<button class="${styles.standard}">Standard Button</button>
 		</div>
 		<div>
-			<button class="${styles.darkButton}">Dark Button</button>
+			<button class="${styles.dark}">Dark Button</button>
 		</div>
 		<div>
-			<button class="${styles.redButton}">Red Button</button>
+			<button class="${styles.red}">Red Button</button>
 		</div>
 		<div>
-			<button class="${styles.bigButton}">Big Button</button>
+			<button class="${styles.big}">Big Button</button>
 		</div>
 		<div>
-			<button class="${styles.bigRedButton}">Big Red Button</button>
+			<button class="${classnames(styles.big.toString(), styles.red.toString())}">Big Red Button</button>
 		</div>
 		<div>
-			<button class="${styles.bigDarkButton}">Big Dark Button</button>
+			<button class="${classnames(styles.big.toString(), styles.dark.toString())}">Big Dark Button</button>
 		</div>
 	`;
 }

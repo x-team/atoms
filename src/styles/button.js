@@ -3,7 +3,7 @@ const fonts = require('./fonts')
 const cmz = require('cmz')
 const styles = {}
 
-styles.defaultButton = cmz('button', `
+styles.standard = cmz('button', `
 	& {
 		background: transparent;
 		border-radius: 2px;
@@ -23,7 +23,7 @@ styles.defaultButton = cmz('button', `
 	}
 `)
 
-styles.bigButton = cmz(`
+styles.big = cmz(`
 	& {
 		border-radius: 3px;
 		border-width: 2px;
@@ -44,11 +44,11 @@ styles.bigButton = cmz(`
 		}
 	}
 `).compose([
-	styles.defaultButton,
+	styles.standard,
 	fonts.action
 ])
 
-styles.darkButton = cmz(`
+styles.dark = cmz(`
 	& {
 		border-color: ${colors.haiti};
 		color: ${colors.haiti};
@@ -59,10 +59,10 @@ styles.darkButton = cmz(`
 		color: ${colors.white};
 	}
 `).compose([
-	styles.defaultButton
+	styles.standard
 ])
 
-styles.redButton = cmz(`
+styles.red = cmz(`
 	& {
 		background-color: ${colors.carnation};
 		border-color: ${colors.carnation};
@@ -75,17 +75,7 @@ styles.redButton = cmz(`
 		color: ${colors.white};
 	}
 `).compose([
-	styles.defaultButton
-])
-
-styles.bigRedButton = cmz().compose([
-	styles.bigButton,
-	styles.redButton
-])
-
-styles.bigDarkButton = cmz().compose([
-	styles.bigButton,
-	styles.darkButton
+	styles.standard
 ])
 
 module.exports = styles;
