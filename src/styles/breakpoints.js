@@ -1,7 +1,7 @@
 module.exports = {
-	xs: '30em',
-	sm: '48em',
-	md: '64em',
-	lg: '75em',
-	xl: '100em'
+	xs: '480px',
+	sm: '768px',
+	md: '1024px',
+	lg: '1280px',
+	xl: '1440px'
 }
