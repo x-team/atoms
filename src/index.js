@@ -15,6 +15,11 @@ const components = [
     name: 'Grid',
     description: 'Flex-based grid system',
     component: require('./templates/grid')()
+  },
+  {
+    name: 'Footer',
+    description: 'SEO Footer',
+    component: require('./templates/footer')()
   }
 ]
 
