@@ -1,11 +1,12 @@
 const cmz = require('cmz')
 
-const styles = cmz('Atom', {
+const styles = cmz('atom', {
 	parent: `
 		margin-left: 15em;
 		padding: 1em 2em;
 	`,
 	atom: `
+		padding: 1em;
 		margin: 1em 0;
 	`,
 	name: `
@@ -18,14 +19,14 @@ const styles = cmz('Atom', {
 	`,
 	description: `
 		font-family: 'Source Sans Pro';
-		margin: 0 0 1em;
+		margin: 0 0 1.5em;
 	`
 })
 
 function atom (props) {
 	return `
 		<div class="${styles.atom}">
-			<h2 id="#${props.name.toLowerCase()}" class="${styles.name}">${props.name}</h2>
+			<h3 id="#${props.name.toLowerCase()}" class="${styles.name}">${props.name}</h3>
 			<p class="${styles.description}">${props.description}</p>
 			${props.component}
 		</div>

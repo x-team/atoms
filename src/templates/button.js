@@ -1,5 +1,5 @@
 const styles = require('../styles/button')
-const classnames = require('classnames')
+const cx = require('classnames')
 
 module.exports = function () {
 	return `
@@ -16,10 +16,10 @@ module.exports = function () {
 			<button class="${styles.big}">Big Button</button>
 		</div>
 		<div>
-			<button class="${classnames(styles.big.toString(), styles.red.toString())}">Big Red Button</button>
+			<button class="${cx(styles.big.toString(), styles.red.toString())}">Big Red Button</button>
 		</div>
 		<div>
-			<button class="${classnames(styles.big.toString(), styles.dark.toString())}">Big Dark Button</button>
+			<button class="${cx(styles.big.toString(), styles.dark.toString())}">Big Dark Button</button>
 		</div>
 	`;
 }

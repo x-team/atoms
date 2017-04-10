@@ -10,4 +10,4 @@ http.createServer(
 
 open(`http://localhost:${PORT}`)
 
-console.log(`Listening on :${PORT}`)
+console.log(`\n\nListening on :${PORT}`)

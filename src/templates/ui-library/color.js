@@ -1,9 +1,10 @@
 const colors = require('../../styles/colors')
 const cmz = require('cmz')
 
-const styles = cmz('Color', {
+const styles = cmz('color', {
 	root: `
 		display: inline-block;
+		margin: 0.5em 2em 0.5em 0;
 		text-align: center;
 	`,
 	color: `
@@ -12,7 +13,6 @@ const styles = cmz('Color', {
 		display: inline-block;
 		height: 4em;
 		width: 4em;
-		margin: 0 1em;
 	`,
 	name: `
 		font-family: 'Source Sans Pro';
@@ -20,7 +20,8 @@ const styles = cmz('Color', {
 		margin: 0.15em 0;
 	`,
 	hex: `
-		font-family: monospace;
+		font-family: 'Source Code Pro';
+		font-size: 0.85em;
 		margin: 0;
 	`
 })

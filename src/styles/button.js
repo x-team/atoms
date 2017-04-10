@@ -11,7 +11,7 @@ styles.standard = cmz('button', `
 		color: ${colors.white};
 		display: inline-block;
 		line-height: 1.5;
-		margin: auto;
+		margin: .15em auto;
 		padding: .3em .8em;
 		text-decoration: none;
 		transition: all .3s ease-out;

@@ -1,9 +1,9 @@
 const cmz = require('cmz')
 const colors = require('../../styles/colors.js')
 
-const styles = cmz('Atom', {
-	sidebar: `
-		background-color: ${colors.carnation};
+const styles = cmz('sidebar', {
+	root: `
+		background-color: ${colors.haiti};
 		bottom: 0;
 		font-family: 'Source Sans Pro';
 		left: 0;
@@ -25,15 +25,16 @@ const styles = cmz('Atom', {
 			display: block;
 			padding: 0.5em 1em;
 			text-decoration: none;
-			transition: background-color .2s ease;
+			transition: all .2s ease;
 		}
 
 		&:hover {
-			background-color: rgba(255, 255, 255, 0.085)
+			background-color: rgba(255, 255, 255, 0.0425);
+			color: ${colors.carnation};
 		}
 
 		&:active {
-			background-color: rgba(0, 0, 0, 0.0425);
+			background-color: rgba(0, 0, 0, 0.085);
 			transition: none;
 		}
 	`
@@ -53,7 +54,7 @@ module.exports = function (props) {
 	}).join('\n')
 
 	return `
-		<div class="${styles.sidebar}">
+		<div class="${styles.root}">
 			<ul class="${styles.list}">
 				${items}
 			</ul>
