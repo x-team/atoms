@@ -26,7 +26,7 @@ const styles = cmz('atom', {
 function atom (props) {
 	return `
 		<div class="${styles.atom}">
-			<h3 id="#${props.name.toLowerCase()}" class="${styles.name}">${props.name}</h3>
+			<h3 id="${props.name.toLowerCase()}" class="${styles.name}">${props.name}</h3>
 			<p class="${styles.description}">${props.description}</p>
 			${props.component}
 		</div>
