@@ -1,41 +1,48 @@
 const colors = require('../styles/colors')
 const grid = require('../styles/grid')
+const deviceWidths = require('../styles/breakpoints')
 const cmz = require('cmz')
+const cx = require('classnames')
 
 const block = cmz(`
-	background: ${colors.white};
-	border: ${colors.offwhite} solid 3px;
+	background: ${colors.offwhite};
+	border: #e6e4ea solid 3px;
 	padding: 1em;
 	text-align: center;
 `)
 
-const responsiveBlock = grid.getColumn([
+const responsiveBlock = cx(block.toString(), grid.column([
 	{
-		breakpoint: 'xs',
+		breakpoint: deviceWidths['xs'],
 		colspan: 12
 	},
 	{
-		breakpoint: 'sm',
+		breakpoint: deviceWidths['sm'],
 		colspan: 6
 	},
 	{
-		breakpoint: 'md',
+		breakpoint: deviceWidths['md'],
 		colspan: 4,
 		reversed: true
 	},
 	{
-		breakpoint: 'lg',
+		breakpoint: deviceWidths['lg'],
 		colspan: 3
 	},
 	{
-		breakpoint: 'xl',
+		breakpoint: deviceWidths['xl'],
 		colspan: 2
 	}
-]).compose([block])
+]).toString())
 
 module.exports = function () {
 	return `
 		<div class="${grid.fluidContainer}">
+			<div class="${grid.row}">
+				<div class="${cx(grid.column().toString(), block.toString())}">auto width</div>
+				<div class="${cx(grid.column().toString(), block.toString())}">auto width</div>
+				<div class="${cx(grid.column().toString(), block.toString())}">auto width</div>
+			</div>
 			<div class="${grid.row}">
 				<div class="${responsiveBlock}">1</div>
 				<div class="${responsiveBlock}">2</div>
@@ -51,30 +58,30 @@ module.exports = function () {
 				<div class="${responsiveBlock}">12</div>
 			</div>
 			<div class="${grid.row}">
-				<div class="${grid.getColumn({colspan: 4}).compose([block])}">offset: 0</div>
+				<div class="${cx(grid.column({colspan: 4}).toString(), block.toString())}">offset: 0</div>
 			</div>
 			<div class="${grid.row}">
-				<div class="${grid.getColumn({colspan: 4, offset: 4}).compose([block])}">offset: 4</div>
+				<div class="${cx(grid.column({colspan: 4, offset: 4}).toString(), block.toString())}">offset: 4</div>
 			</div>
 			<div class="${grid.row}">
-				<div class="${grid.getColumn({colspan: 4, offset: 8}).compose([block])}">offset: 8</div>
+				<div class="${cx(grid.column({colspan: 4, offset: 8}).toString(), block.toString())}">offset: 8</div>
 			</div>
 			<div class="${grid.reversedRow}">
-				<div class="${grid.getColumn({colspan: 4}).compose([block])}">Reversed 1</div>
-				<div class="${grid.getColumn({colspan: 4}).compose([block])}">Reversed 2</div>
-				<div class="${grid.getColumn({colspan: 4}).compose([block])}">Reversed 3</div>
+				<div class="${cx(grid.column({colspan: 4}).toString(), block.toString())}">Reversed 1</div>
+				<div class="${cx(grid.column({colspan: 4}).toString(), block.toString())}">Reversed 2</div>
+				<div class="${cx(grid.column({colspan: 4}).toString(), block.toString())}">Reversed 3</div>
 			</div>
 			<div class="${grid.row}">
-				<div class="${grid.getColumn({colspan: 6}).compose([block])}">
+				<div class="${cx(grid.column({colspan: 6}).toString(), block.toString())}">
 					<div class="${grid.row}">
-						<div class="${grid.getColumn({colspan: 6}).compose([block])}">Nested 1</div>
-						<div class="${grid.getColumn({colspan: 6}).compose([block])}">Nested 2</div>
+						<div class="${cx(grid.column({colspan: 6}).toString(), block.toString())}">Nested 1</div>
+						<div class="${cx(grid.column({colspan: 6}).toString(), block.toString())}">Nested 2</div>
 					</div>
 				</div>
-				<div class="${grid.getColumn({colspan: 6}).compose([block])}">
-					<div class="${grid.getColumn({colspan: 11, offset: 1}).compose([block])}">
-						<div class="${grid.getColumn({colspan: 11, offset: 1}).compose([block])}">
-							<div class="${grid.getColumn({colspan: 11, offset: 1}).compose([block])}">Nested</div>
+				<div class="${cx(grid.column({colspan: 6}).toString(), block.toString())}">
+					<div class="${cx(grid.column({colspan: 11, offset: 1}).toString(), block.toString())}">
+						<div class="${cx(grid.column({colspan: 11, offset: 1}).toString(), block.toString())}">
+							<div class="${cx(grid.column({colspan: 11, offset: 1}).toString(), block.toString())}">Nested</div>
 						</div>
 					</div>
 				</div>

@@ -1,6 +1,5 @@
 const cmz = require('cmz')
-const applyOnBreakpoint = require('./utils').applyOnBreakpoint
-const deviceWidths = require('./breakpoints')
+const applyStylesUpTo = require('./utils').applyStylesUpTo
 const GRID_DIVISION = 12
 
 const styles = cmz('flexbox', {
@@ -24,12 +23,6 @@ const styles = cmz('flexbox', {
 	  flex-wrap: wrap;
 	  margin-right: -1rem;
 	  margin-left: -1rem;
-  `,
-  column: `
-	  box-sizing: border-box;
-	  flex: 0 0 auto;
-	  padding-right: 1rem;
-	  padding-left: 1rem;
   `
 })
 
@@ -37,26 +30,39 @@ styles.reversedRow = cmz(`
 	flex-direction: row-reverse;
 `).compose([styles.row])
 
+
+const _column = cmz(`
+  box-sizing: border-box;
+  flex: 1 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+`)
+
 styles.reversedColumn = cmz(`
 	flex-direction: column-reverse;
-`).compose([styles.column])
+`).compose([_column])
 
 _getColumn = function (props) {
 	const colspan = props.colspan && props.colspan < GRID_DIVISION ? props.colspan / GRID_DIVISION * 100 + '%' : '100%'
 	const offset = props.offset && props.offset < GRID_DIVISION ? props.offset / GRID_DIVISION * 100 + '%' : 0
-	const breakpoint = props.breakpoint && props.breakpoint in deviceWidths ? deviceWidths[props.breakpoint] : null
+	const breakpoint = props.breakpoint ? props.breakpoint : null
 
-	return cmz(applyOnBreakpoint(`
+	return cmz(applyStylesUpTo(`
 			& {
 				flex-basis: ${colspan};
+				flex-grow: 0;
 				margin-left: ${offset};
 				width: ${colspan};
 			}
 		}
-	`, breakpoint)).compose(props.reversed ? styles.reversedColumn : styles.column)
+	`, breakpoint)).compose(props.reversed ? styles.reversedColumn : _column)
 }
 
-styles.getColumn = function (props) {
+styles.column = function (props) {
+	if (props === undefined) {
+		return _column
+	}
+
 	if (props instanceof Array) {
 		const cmzBreakpoints = props.map(_getColumn)
 		return cmz().compose(cmzBreakpoints)
