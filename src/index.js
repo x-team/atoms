@@ -40,6 +40,20 @@ const components = [
     component: require('./templates/grid')()
   },
   {
+    name: 'Header',
+    description: 'Responsive Header',
+    component: require('./templates/header')({
+      items: [
+        {href: "/", anchor: "Home", title: "Home", currentPage: true},
+        {href: "/join/", anchor: "Join X-Team", title: "Join X-Team as a Developer"},
+        {href: "/our-developers/", anchor: "Our Developers", title: "Our Developers"},
+        {href: "/unleash/", anchor: "Unleash", title: "Unleash"},
+        {href: "/blog/", anchor: "Blog", title: "X-Team's blog"},
+        {href: "/portfolio/", anchor: "Portfolio", title: "Our Work"}
+      ]
+    })
+  },
+  {
     name: 'Footer',
     description: 'SEO Footer',
     component: require('./templates/footer')()
