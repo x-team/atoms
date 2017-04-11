@@ -1,5 +1,7 @@
 const footer = require('../styles/footer')
 const grid = require('../styles/grid')
+const hideUntil = require('../styles/utils').hideUntil
+const deviceWidths = require('../styles/breakpoints')
 const cmz = require('cmz')
 
 module.exports = function (props) {
@@ -11,8 +13,8 @@ module.exports = function (props) {
           <div class="${footer.column}">
             <h4 class="${footer.title}">Company</h4>
             <ul class="${footer.list}">
-              <li class="${footer.item}"><a class="${footer.link}" href="/">Home</a></li>
-              <li class="${footer.item}"><a class="${footer.link}" href="/blog/">Blog</a></li>
+              <li class="${hideUntil(deviceWidths['md'])}"><a class="${footer.link}" href="/">Home</a></li>
+              <li class="${hideUntil(deviceWidths['md'])}"><a class="${footer.link}" href="/blog/">Blog</a></li>
               <li><a class="${footer.link}" href="/about/">About Us</a></li>
               <li><a class="${footer.link}" href="/portfolio/">Our Work</a></li>
               <li><a class="${footer.link}" href="/unleash/">Unleash</a></li>
@@ -28,7 +30,7 @@ module.exports = function (props) {
               <li><a class="${footer.link}" href="/authors/">Write for us</a></li>
             </ul>
           </div>
-          <div class="${grid.getColumn({colspan: 3})}">
+          <div class="${footer.column}">
             <h4 class="${footer.title}">Hire Developers</h4>
             <ul class="${footer.list}">
               <li><a class="${footer.link}" href="/hire-react-developers/">React Developers</a></li>

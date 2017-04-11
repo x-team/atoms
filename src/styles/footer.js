@@ -24,11 +24,34 @@ const styles =  cmz('footer', {
 		&:hover {
 			color: #272334;
 		}
+
+		@media screen and (max-width: 1023px) {
+		  & {
+				line-height: 1.75rem;
+				margin: .75rem 0;
+				display: block;
+		  }
+		}
+
+		@media screen and (min-width: 1024px) {
+			& {
+				font-size: 1rem;
+			}
+		}
 	`,
 	colophon: `
-		overflow: hidden;
-		padding: 2em 0;
-		color: #d6d6d6;
+		& {
+			overflow: hidden;
+			padding: 2em 0;
+			color: #d6d6d6;
+		}
+
+		@media screen and (max-width: 1023px) {
+			& {
+				text-align: center;
+				font-size: .9rem;
+			}
+		}
 	`,
 	logo: `
 		& {
@@ -78,13 +101,13 @@ styles.column = cmz(`
 		width: 15%;
 	}
 
-	@media only screen and (max-width: ${breakpoints['md']}) {
+	@media only screen and (max-width: 1023px) {
 		&:not(:first-child) {
 			display: none;
 		}
 	}
 
-	@media only screen and (min-width: ${breakpoints['md']}) {
+	@media only screen and (min-width: 1024px) {
 		& {
 		  flex-grow: 1;
 		  max-width: 28%;
@@ -94,7 +117,7 @@ styles.column = cmz(`
 	  	max-width: 120px;
 	  }
   }
-`).compose([grid.getColumn({colspan: 3})])
+`).compose([grid.column()])
 
 styles.links = cmz(`
 	& {
@@ -111,10 +134,18 @@ styles.links = cmz(`
 `).compose(layout.block)
 
 styles.title = cmz(`
-	font-size: 1.125rem;
-	text-transform: uppercase;
-	color: #272334;
-	margin: 0 0 1em;
+	& {
+		font-size: 1.125rem;
+		text-transform: uppercase;
+		color: #272334;
+		margin: 0 0 1em;
+	}
+
+	@media screen and (max-width: 1023px) {
+		& {
+			display: none;
+		}
+	}
 `).compose(fonts.action)
 
 module.exports = styles
