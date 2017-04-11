@@ -1,25 +1,20 @@
-const styles = require('../styles/button')
+const button = require('../styles/button')
 const cx = require('classnames')
 
-module.exports = function () {
+module.exports = function (props) {
+	const buttonStyle = {}
+
+	buttonStyle[button.red.toString()] = props.red
+	buttonStyle[button.big.toString()] = props.big
+	buttonStyle[button.dark.toString()] = props.dark
+
+	const classNames = cx(button.base.toString(), buttonStyle)
+
+  const setTarget = cx({
+    'target="_blank"': props.newTab
+  })
+
 	return `
-		<div>
-			<button class="${styles.standard}">Standard Button</button>
-		</div>
-		<div>
-			<button class="${styles.dark}">Dark Button</button>
-		</div>
-		<div>
-			<button class="${styles.red}">Red Button</button>
-		</div>
-		<div>
-			<button class="${styles.big}">Big Button</button>
-		</div>
-		<div>
-			<button class="${cx(styles.big.toString(), styles.red.toString())}">Big Red Button</button>
-		</div>
-		<div>
-			<button class="${cx(styles.big.toString(), styles.dark.toString())}">Big Dark Button</button>
-		</div>
-	`;
+		<a href="${props.href}" title="${props.title ? props.title : props.anchor}" ${setTarget} class="${classNames}">${props.anchor}</a>
+	`
 }

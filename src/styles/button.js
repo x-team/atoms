@@ -3,12 +3,13 @@ const fonts = require('./fonts')
 const cmz = require('cmz')
 const styles = {}
 
-styles.standard = cmz('button', `
+styles.base = cmz('button', `
 	& {
 		background: transparent;
 		border-radius: 2px;
 		border: 2px solid ${colors.white};
 		color: ${colors.white};
+		cursor: pointer;
 		display: inline-block;
 		line-height: 1.5;
 		margin: .15em auto;
@@ -44,7 +45,7 @@ styles.big = cmz(`
 		}
 	}
 `).compose([
-	styles.standard,
+	styles.base,
 	fonts.action
 ])
 
@@ -58,9 +59,7 @@ styles.dark = cmz(`
 		background-color: #272334;
 		color: ${colors.white};
 	}
-`).compose([
-	styles.standard
-])
+`).compose([styles.base])
 
 styles.red = cmz(`
 	& {
@@ -74,8 +73,6 @@ styles.red = cmz(`
 		border-color: #ff727b;
 		color: ${colors.white};
 	}
-`).compose([
-	styles.standard
-])
+`).compose([styles.base])
 
 module.exports = styles;
