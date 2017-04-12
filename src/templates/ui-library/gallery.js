@@ -2,11 +2,12 @@ const cmz = require('cmz')
 
 const styles = cmz('atom', {
 	parent: `
-		margin-left: 15em;
+		margin-left: 12em;
 		padding: 1em 2em;
 	`,
 	atom: `
 		padding: 1em;
+		position: relative;
 		margin: 1em 0;
 	`,
 	name: `

@@ -1,5 +1,6 @@
 const cmz = require('cmz')
 const colors = require('../../styles/colors.js')
+const fonts = require('../../styles/fonts.js')
 
 const styles = cmz('sidebar', {
 	root: `
@@ -9,15 +10,21 @@ const styles = cmz('sidebar', {
 		left: 0;
 		position: fixed;
 		top: 0;
-		width: 15em;
+		width: 12em;
+	`,
+	title: `
+		background-color: rgba(255, 255, 255, 0.025);
+		color: ${colors.white};
+		font-style: italic;
+		letter-spacing: -0.025em;
+		margin: 0;
+		padding: 1em;
+		text-transform: uppercase;
 	`,
 	list: `
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
-	`,
-	item: `
-
 	`,
 	link: `
 		& {
@@ -29,20 +36,22 @@ const styles = cmz('sidebar', {
 		}
 
 		&:hover {
-			background-color: rgba(255, 255, 255, 0.0425);
+			background-color: ${colors.white};
 			color: ${colors.carnation};
 		}
 
 		&:active {
-			background-color: rgba(0, 0, 0, 0.085);
+			background-color: rgba(255, 255, 255, 0.95);
 			transition: none;
 		}
 	`
 })
 
+styles.title.compose(fonts.heading)
+
 function item (props) {
 	return `
-		<li class="${styles.item}">
+		<li>
 			<a class="${styles.link}" href="#${props.name.toLowerCase()}">${props.name}</a>
 		</li>
 	`
@@ -55,6 +64,7 @@ module.exports = function (props) {
 
 	return `
 		<div class="${styles.root}">
+			<h3 class="${styles.title}">X-Team Atoms</h3>
 			<ul class="${styles.list}">
 				${items}
 			</ul>
