@@ -54,6 +54,11 @@ const components = [
     })
   },
   {
+    name: 'Form',
+    description: 'Basic Form',
+    component: require('./templates/form')()
+  },
+  {
     name: 'Footer',
     description: 'SEO Footer',
     component: require('./templates/footer')()
