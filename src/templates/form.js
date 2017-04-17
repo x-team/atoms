@@ -20,7 +20,7 @@ module.exports = function() {
           Tell us about your needs and we’ll connect you with your own dedicated account manager.
         </p>
         <div>
-          <form onsubmit="return formSubmit(this);" name="hire" method="post" id="subscribe">
+          <form name="hire" method="post" id="subscribe">
             <input class="${form.input}" type="text" placeholder="Full Name" name="name" id="name" required>
             <input class="${form.input}" type="text" placeholder="Company" name="company">
             <input class="${form.input}" type="email" placeholder="E-mail" name="email" id="email" required>

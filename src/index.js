@@ -72,6 +72,9 @@ const html = require('./templates/ui-library')({
 if (!module.parent) {
   if (typeof document !== 'undefined') {
     document.getElementById('root').innerHTML = html
+
+    require('./components/header')()
+    require('./components/form')()
   }
   else {
     console.log(html)

@@ -1,4 +1,5 @@
 const cmz = require('cmz')
+const colors = require('./colors')
 
 const styles = cmz('form', {
 	root: `
@@ -50,6 +51,28 @@ const styles = cmz('form', {
 				font-size: 1.65rem;
 				line-height: 2.2rem;
 				margin-bottom: 4rem;
+			}
+		}
+	`,
+	error: `
+		& {
+			color: ${colors.carnation};
+			font-size: 0.9rem;
+			font-weight: bold;
+			padding: 0.66em 0;
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		@media screen and (max-width: 1023px) {
+			& {
+				max-width: 26.75rem;
+			}
+		}
+
+		@media screen and (min-width: 1024px) {
+			& {
+				width: 40.75rem;
 			}
 		}
 	`,
