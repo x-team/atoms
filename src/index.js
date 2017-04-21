@@ -54,6 +54,11 @@ const components = [
     })
   },
   {
+    name: 'Article',
+    description: 'Markdown Theme',
+    component: require('./templates/article')()
+  },
+  {
     name: 'Form',
     description: 'Basic Form',
     component: require('./templates/form')()

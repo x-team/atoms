@@ -1,4 +1,5 @@
 @import "./normalize.css";
+@import "./markdown.css";
 
 ::-moz-selection {
 	background: rgb(255,89,101);
@@ -15,7 +16,7 @@
 }
 
 * {
-	font-family: 'Source Sans Pro';
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 body {
