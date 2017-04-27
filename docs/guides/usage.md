@@ -40,8 +40,8 @@ const borderedHeading = `<div class="${cx(blackBorder.toString(), font.heading.t
 const bordered = `<div class="${blackBorder}">Hello</div>`
 // returns a bordered block with the default font
 
-blackBorder.compose([font.action])
-// alters blackBorder. compose() doesn't mutate the atom but rather just appends the CSS class of font.action
+blackBorder.compose([font.heading])
+// alters blackBorder. compose() doesn't mutate the atom but rather just appends the CSS class of font.heading
 
 const borderedHeadingToo = `<div class="${blackBorder}">Hello</div>`
 // returns a bordered block with the heading font
