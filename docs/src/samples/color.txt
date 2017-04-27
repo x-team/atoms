@@ -1,0 +1,6 @@
+module.exports = 'const color = require('atoms/styles/color');
+const cmz = require('cmz');
+
+const element = cmz('element', `
+  color: ${color.white};
+`);'

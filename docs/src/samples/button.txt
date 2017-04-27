@@ -1,0 +1,17 @@
+/* STYLE */
+const button = require('atoms/styles/button')
+const cx = require('classnames')
+
+module.exports = function() {
+  return `
+    <button class="${button.base}">Base Button</button>
+    <button class="${cx(button.base.toString(), button.red.toString())}">Red Button</button>
+    <button class="${cx(button.base.toString(), button.big.toString(), button.dark.toString())}">Big Dark Button</button>
+  `
+}
+
+/* TEMPLATE */
+const Button = require('atoms/templates/button')
+
+const BaseButton = Button({ href: '#', anchor: 'Base'})
+// <a href="#" title="Base" class="button">Base</a>

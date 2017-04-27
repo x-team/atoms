@@ -1,0 +1,1 @@
+### X-Team Atoms provides a collection of [cmz](https://github.com/joshwnj/cmz) styles and plain HTML string templates which can be reused across all X-Team branded projects. Contributions welcome! Feel free to clone the [repository](https://github.com/x-team/atoms).

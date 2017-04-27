@@ -1,0 +1,10 @@
+const font = require('atoms/styles/font')
+
+module.exports = function() {
+  return `
+    <h1 class="${font.heading}">Heading Font</h1>
+    <p class="${font.body}">Body Font</p>
+    <div class="${font.action}">Action Font</div>
+    <code class="${font.monospace}">Monospaced Font</code>
+  `
+}

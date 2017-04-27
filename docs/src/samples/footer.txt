@@ -1,0 +1,2 @@
+/* TEMPLATE */
+const Footer = require('atoms/templates/footer')()

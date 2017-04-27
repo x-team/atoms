@@ -1,0 +1,156 @@
+article header, article nav, article article, article footer {
+  margin:0 auto;
+}
+
+article {
+  margin: 1em auto;
+  padding: 1em;
+  max-width: 1024px;
+}
+
+article footer {
+  margin-bottom:50px;
+}
+
+article video {
+  margin: 2em 0;
+  border:1px solid #ddd;
+}
+
+
+article nav {
+  font-size: .9em;
+  font-style: italic;
+  border-bottom: 1px solid #ddd;
+  padding: 1em 0;
+}
+
+article nav p {
+  margin: 0;
+}
+
+
+/* Typography
+-------------------------------------------------------- */
+
+article h1 {
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: -0.025em;
+  margin-top: 0;
+}
+
+article h2 {
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+article h2 + h3 {
+  margin-top: 0.25em;
+}
+
+article h3 {
+  margin-top: 1em;
+}
+
+article pre + h3 {
+  margin-top: 2em;
+}
+
+article h3 + pre,
+article h3 + p {
+  margin-top: -0.5em;
+}
+
+article strong {
+  font-family: 'Raleway', sans-serif;
+}
+
+article p {
+  margin-top:0;
+  -webkit-hypens:auto;
+  -moz-hypens:auto;
+  hyphens:auto;
+}
+
+article ul {
+  list-style: square;
+  padding-left:1.2em;
+}
+
+article ol {
+  padding-left:1.2em;
+}
+
+article blockquote {
+  margin-left: 1em;
+  padding-left: 1em;
+  border-left: 3px solid #ff5965;
+}
+
+article code {
+  font-family: "Source Code Pro", "Menlo", "Monaco", monospace, serif;
+  font-size: .9em;
+  background: #f3f2f7;
+  border-radius: 3px;
+  color: #130e2e;
+  display: inline-block;
+  padding: 0.1em 0.3em;
+  margin: 0 0.2em;
+}
+
+article pre code {
+  background: #130e2e;
+  border-radius: 0;
+  color: #fff;
+}
+
+article a {
+  border-bottom: #666 solid 1px;
+  color: #222;
+  text-decoration: none;
+}
+
+article a:hover {
+  border-bottom: #ff5965 solid 2px;
+}
+
+article a img {
+  border:none;
+}
+
+article h1 a, article h1 a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+article hr {
+  color : #ddd;
+  height : 1px;
+  margin: 2em 0;
+  border-top : solid 1px #ddd;
+  border-bottom : none;
+  border-left: 0;
+  border-right: 0;
+}
+
+@media only screen and (max-device-width: 1024px) {
+  article body {
+    font-size: 120%;
+    line-height: 1.4;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  article body {
+    text-align: left;
+  }
+
+  article, article footer {
+    width: auto;
+  }
+
+  article {
+    padding: 0 10px;
+  }
+}

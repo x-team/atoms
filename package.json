@@ -1,36 +1,22 @@
 {
   "name": "atoms",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "CSS atoms for X-Team branded sites",
-  "main": "index.js",
   "scripts": {
-    "build": "monobrow",
-    "start": "monobrow --hot & node server.js & wait",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/x-team/atoms.git"
   },
-  "author": "",
+  "author": "Aaron Noel De Leon",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/x-team/atoms/issues"
   },
-  "browserify-css": {
-    "autoInject": true,
-    "minify": true,
-    "rootDir": "."
-  },
   "homepage": "https://github.com/x-team/atoms#readme",
-  "devDependencies": {
-    "browserify-css": "^0.10.0",
-    "ecstatic": "^2.1.0",
-    "monobrow": "^2.6.3",
-    "open": "0.0.5"
-  },
   "dependencies": {
     "classnames": "^2.2.5",
-    "cmz": "^2.4.1"
+    "cmz": "^2.6.0"
   }
 }

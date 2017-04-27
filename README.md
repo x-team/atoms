@@ -6,10 +6,15 @@ CSS atoms for X-Team branded sites
 npm install
 ```
 
-## Development
+## View Documentation
 
-Start browserify hot-reload mode, and open a browser window:
 ```
+npm link
+
+cd docs
+npm install
+npm link atoms
+
 npm start
 ```
 

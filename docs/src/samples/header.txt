@@ -1,0 +1,44 @@
+/* STYLE */
+const header = require('atoms/styles/header')
+const grid = require('atoms/styles/grid')
+
+module.exports = function() {
+  return `
+    <header class="${header.root}">
+      <div class="${grid.container}">
+        <a href="/" class="${header.logo}">
+          <svg class="${header.svg}"> ... </svg>
+        </a>
+
+        <button id="menu-toggle" class="${header.toggle}">
+          <span class="${header.line}">menu</span>
+        </button>
+
+        <nav class="${header.nav}">
+          <ul role="menubar" class="${header.list}">
+            <li role="menuitem" class="${header.item}">
+              <a class="${header.link}">${item.anchor}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  `
+}
+
+/* TEMPLATE */
+const Header = require('atoms/templates/header')
+
+const siteHeader = Header({
+  items: [
+    {href: "/", anchor: "Home", title: "Home", currentPage: true},
+    {href: "/join/", anchor: "Join X-Team", title: "Join X-Team as a Developer"},
+    {href: "/our-developers/", anchor: "Our Developers", title: "Our Developers"},
+    {href: "/unleash/", anchor: "Unleash", title: "Unleash"},
+    {href: "/blog/", anchor: "Blog", title: "X-Team's blog"},
+    {href: "/portfolio/", anchor: "Portfolio", title: "Our Work"}
+  ]
+})
+
+/* Mobile menu navigation */
+require('atoms/components/header')()

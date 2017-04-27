@@ -1,0 +1,38 @@
+@import './normalize.css';
+
+::-moz-selection {
+	background: rgb(255,89,101);
+	color: #fff;
+}
+
+::selection {
+	background: #ff5965;
+	color: #fff;
+}
+
+:focus {
+	outline-color: #ff5965;
+}
+
+* {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+	background: #e6e4ea;
+	line-height: 1.5;
+}
+
+pre {
+	background-color: #130e2e;
+	border: none;
+	border-radius: 0;
+	color: #E1EBFF;
+	display: block;
+	padding: 1em;
+	text-shadow: none;
+}
+
+pre * {
+	font-family: 'Source Code Pro';
+}

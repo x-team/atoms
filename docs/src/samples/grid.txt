@@ -1,0 +1,21 @@
+const grid = require('atoms/styles/grid')
+const breakpoints = require('atoms/breakpoints')
+
+module.exports = function() {
+  return `
+    <div class="${grid.container}">
+      <div class="${grid.row}">
+        <div class="${grid.column()}">auto width columns</div>
+        <div class="${grid.column()}">auto width columns</div>
+        <div class="${grid.column()}">auto width columns</div>
+        <div class="${grid.column({
+          breakpoint: breakpoints['xs'],
+          colspan: 12
+        }, {
+          breakpoint: breakpoints['md'],
+          colspan: 6
+        })}">responsive column</div>
+      </div>
+    </div>
+  `
+}
