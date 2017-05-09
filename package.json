@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "CSS atoms for X-Team branded sites",
   "scripts": {
+    "build:umd": "browserify -t babelify --require classnames --require cmz --standalone x-atoms -o dist/atoms.js styles/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,10 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "cmz": "^2.6.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2020": "^1.0.2",
+    "babelify": "^7.3.0",
+    "uglifyjs": "^2.4.10"
   }
 }
