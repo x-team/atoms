@@ -1,6 +1,6 @@
 {
   "name": "atoms",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "CSS atoms for X-Team branded sites",
   "scripts": {
     "build:umd": "browserify -t babelify --require classnames --require cmz --standalone x-atoms -o dist/atoms.js styles/index.js",
