@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "atoms": "git+https://git@github.com/x-team/atoms.git",
-    "classnames": "^2.2.5",
     "cmz": "^2.6.0",
     "highlight.js": "^9.11.0",
     "marked": "^0.3.6",

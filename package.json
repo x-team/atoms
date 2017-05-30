@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "CSS atoms for X-Team branded sites",
   "scripts": {
-    "build:umd": "browserify -t babelify --require classnames --require cmz --standalone x-atoms -o dist/atoms.js styles/index.js",
+    "build:umd": "browserify -t babelify --require cmz --standalone x-atoms -o dist/atoms.js styles/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/x-team/atoms#readme",
   "dependencies": {
-    "classnames": "^2.2.5",
     "cmz": "^2.6.0"
   },
   "devDependencies": {

@@ -12,45 +12,22 @@ module.exports = function () {
 ```
 
 ### 3. Combine Styles
-Use **cmz** atoms' `toString()` method to get the class name and combine it with other classes. We recommend using the `classnames` package.
-This is commonly use when combining styles on the template level.
+
+`cmz` allows you to compose atoms, classnames and styles together:
+
 ```
 const button = require('atoms/styles/button')
-const cx = require('classnames')
-const classNames = cx(button.base.toString(), button.red.toString(), button.big.toString())
-
-module.exports = function () {
-	return `<a href="#" class="${classNames}">Back to top</a>`
-}
-```
-
-### 4. Compose Styles
-Use **cmz** atoms' `compose()` method to combine atoms upon style definition.
-To illustrate the difference between using the `classnames` package and `compose()`:
-```
 const cmz = require('cmz')
-const cx = require('classnames')
-const font = require('atoms/styles/font')
 
-const blackBorder = cmz('border: black solid 1px;')
+const atom = cmz().compose([
+    button.base,
+    button.red,
+    `
+      padding: 2rem;
+    `
+])
 
-const borderedHeading = `<div class="${cx(blackBorder.toString(), font.heading.toString())}">Hello</div>`
-// returns a bordered block with the heading font
-
-const bordered = `<div class="${blackBorder}">Hello</div>`
-// returns a bordered block with the default font
-
-blackBorder.compose([font.heading])
-// alters blackBorder. compose() doesn't mutate the atom but rather just appends the CSS class of font.heading
-
-const borderedHeadingToo = `<div class="${blackBorder}">Hello</div>`
-// returns a bordered block with the heading font
-```
-
-### 5. Use Templates
-```
-const Button = require('atoms/templates/button')
 module.exports = function () {
-	return Button({ href: '#', anchor: 'Back to top', big: true, red: true })
+	return `<a href="#" class="${atom}">Back to top</a>`
 }
 ```

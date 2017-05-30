@@ -1,20 +1,22 @@
+const cmz = require('cmz')
 const color = require('../styles/color')
 const header = require('../styles/header')
 const grid = require('../styles/grid')
 const button = require('./button')
-const cx = require('classnames')
 
 function renderItems (items) {
-  return items.map((item) => {
-    const currentPage = cx(header.link.toString(), {
-      'menu__link--current': item.currentPage
-    })
-    return `
+    return items.map((item) => {
+      const currentPage = cmz().compose([
+          header.link,
+          item.currentPage && 'menu__link--current'
+      ])
+
+        return `
       <li role="menuitem" class="${header.item}">
          <a href="${item.href}" title="${item.title}" class="${currentPage}">${item.anchor}</a>
       </li>
     `
-  }).join('\n')
+    }).join('\n')
 }
 
 module.exports = function (props) {
