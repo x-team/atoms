@@ -4,7 +4,7 @@ const font = require('atoms/styles/font.js')
 
 const styles = cmz('sidebar', {
 	root: `
-		background-color: ${color.haiti};
+		background-color: ${color.navy};
 		bottom: 0;
 		font-family: 'Source Sans Pro';
 		left: 0;
@@ -15,7 +15,7 @@ const styles = cmz('sidebar', {
 	title: `
 		& {
 			background-color: rgba(255, 255, 255, 0.025);
-			color: ${color.carnation};
+			color: ${color.red};
 			font-style: italic;
 			font-size: 1.25em;
 			letter-spacing: -0.0125em;
@@ -30,7 +30,7 @@ const styles = cmz('sidebar', {
 		}
 	`,
 	subtitle: `
-		color: ${color.carnation};
+		color: ${color.red};
 		font-size: 0.8em;
 		margin: 0;
 		opacity: 0.75;
@@ -54,7 +54,7 @@ const styles = cmz('sidebar', {
 		}
 
 		&:after {
-			color: ${color.haiti};
+			color: ${color.navy};
 			content: '›';
 			font-size: 1.25em;
 			font-weight: bold;
@@ -67,7 +67,7 @@ const styles = cmz('sidebar', {
 
 		&:hover {
 			background-color: ${color.white};
-			color: ${color.haiti};
+			color: ${color.navy};
 			font-weight: bold;
 		}
 

@@ -1,6 +1,6 @@
 module.exports = {
 	white: '#fff',
-	offwhite: '#f3f2f7',
-	carnation: '#ff5965',
-	haiti: '#130e2e'
+	offwhite: '#f4f4f7',
+	red: '#f63a55',
+	navy: '#130e2e',
 }

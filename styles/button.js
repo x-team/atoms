@@ -20,7 +20,7 @@ styles.base = cmz('button', `
 
 	&:hover {
 		background-color: ${color.white};
-		color: ${color.carnation};
+		color: ${color.red};
 	}
 `)
 
@@ -51,8 +51,8 @@ styles.big = cmz(`
 
 styles.dark = cmz(`
 	& {
-		border-color: ${color.haiti};
-		color: ${color.haiti};
+		border-color: ${color.navy};
+		color: ${color.navy};
 	}
 
 	&:hover {
@@ -63,8 +63,8 @@ styles.dark = cmz(`
 
 styles.red = cmz(`
 	& {
-		background-color: ${color.carnation};
-		border-color: ${color.carnation};
+		background-color: ${color.red};
+		border-color: ${color.red};
 		color: ${color.white};
 	}
 

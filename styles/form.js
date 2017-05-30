@@ -56,7 +56,7 @@ const styles = cmz('form', {
 	`,
 	error: `
 		& {
-			color: ${color.carnation};
+			color: ${color.red};
 			font-size: 0.9rem;
 			font-weight: bold;
 			padding: 0.66em 0;
@@ -81,7 +81,7 @@ const styles = cmz('form', {
 			display: block;
 			width: 90%;
 			font-size: 1.125rem;
-			background-color: #fff;
+			background-color: ${color.white};
 			border: 2px solid #938e9f;
 			border-radius: 3px;
 			padding: .66em;
@@ -89,8 +89,8 @@ const styles = cmz('form', {
 		}
 
 		&:focus {
-			outline-color: #ff5964;
-			border-color: #fff;
+			outline-color: ${color.red};
+			border-color: ${color.white};
 		}
 
 		&::placeholder {
@@ -118,7 +118,7 @@ const styles = cmz('form', {
 		}
 
 		&:focus {
-			outline-color: #ff5964;
+			outline-color: ${color.red};
 		}
 
 		@media screen and (max-width: 480px) {

@@ -14,7 +14,7 @@ const styles = cmz('atom', {
 		max-width: 1024px;
 	`,
 	name: `
-		color: ${color.haiti};
+		color: ${color.navy};
 		font-family: 'Open Sans';
 		font-weight: bold;
 		letter-spacing: -1px;

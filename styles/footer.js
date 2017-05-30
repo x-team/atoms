@@ -121,11 +121,11 @@ styles.column = cmz(`
 
 styles.links = cmz(`
 	& {
-		background-color: #f0eff2;
+		background-color: ${color.offwhite};
 		color: #ebeaed;
 	}
 
-	@media only screen and (max-width: ${breakpoints['md']}) {
+	@media only screen and (max-width: ${breakpoints.md}) {
 		& {
 			text-align: center;
 			padding: 1.5rem 0;
