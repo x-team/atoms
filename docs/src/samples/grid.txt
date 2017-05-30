@@ -9,10 +9,10 @@ module.exports = function() {
         <div class="${grid.column()}">auto width columns</div>
         <div class="${grid.column()}">auto width columns</div>
         <div class="${grid.column({
-          breakpoint: breakpoints['xs'],
+          breakpoint: breakpoints.xs,
           colspan: 12
         }, {
-          breakpoint: breakpoints['md'],
+          breakpoint: breakpoints.md,
           colspan: 6
         })}">responsive column</div>
       </div>
