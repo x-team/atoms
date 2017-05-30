@@ -26,7 +26,7 @@
   "devDependencies": {
     "browserify-css": "^0.10.0",
     "ecstatic": "^2.1.0",
-    "monobrow": "^2.6.3",
+    "monobrow": "^2.9.2",
     "open": "0.0.5"
   },
   "dependencies": {
