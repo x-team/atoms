@@ -1,4 +1,5 @@
 const cmz = require('cmz')
+const button = require('./button')
 const color = require('./color')
 
 const styles = cmz('form', {
@@ -111,7 +112,10 @@ const styles = cmz('form', {
 			}
 		}
 	`,
-	submit: `
+	submit: [
+        button.big,
+        button.red,
+        `
 		& {
 			display: block;
 			margin: 2rem auto 0;
@@ -138,7 +142,7 @@ const styles = cmz('form', {
 				margin-top: 4rem;
 			}
 		}
-	`
+	`]
 })
 
 styles.select = cmz('select', `

@@ -1,15 +1,8 @@
 const form = require('atoms/styles/form')
 const grid = require('atoms/styles/grid')
 const button = require('atoms/styles/button')
-const cx = require('classnames')
 
-const submitButton = cx(
-  form.submit.toString(),
-  button.big.toString(),
-  button.red.toString()
-)
-
-module.exports = function() {
+module.exports = function () {
   return `
     <section class="${form.root}">
       <div class="${grid.container}">
@@ -22,6 +15,7 @@ module.exports = function() {
         <div>
           <form name="hire" method="post" id="subscribe">
             <input class="${form.input}" type="text" placeholder="Full Name" name="name" id="name" required>
+            <input class="${form.input}" type="text" placeholder="Company" name="company">
             <input class="${form.input}" type="email" placeholder="E-mail" name="email" id="email" required>
             <select class="${form.select}" placeholder="Platform" name="platform" id="platform" required>
               <option>Web</option>
@@ -29,14 +23,12 @@ module.exports = function() {
               <option>Desktop</option>
               <option>Cross-platform</option>
             </select>
-            <textarea class="${form.textarea}" name="description" placeholder="What kind of developers do you need to strengthen your company?" required></textarea>
-            <input class="${submitButton}" type="submit" value="Get Started" name="submit_form">
+            <textarea class="${form.textarea}" placeholder="Placeholder for a question needing a longer answer." required></textarea>
+            <input class="${form.input}" type="text" placeholder="Placeholder for a shorter question">
+            <input class="${form.submit}" type="submit" value="Get Started" name="submit_form">
           </form>
         </div>
       </div>
     </section>
   `
 }
-
-/* Restyle default browser validation pop up message */
-require('atoms/components/form')()
