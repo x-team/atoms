@@ -2194,7 +2194,7 @@ module.exports = _react2.default.createElement(
   )
 );
 
-},{"../components/Button":5,"../components/Feature":6,"../components/FeatureList":7,"../components/Heading":8,"../components/PullQuote":9,"../components/Section":10,"./playground/button":24,"./ui":27,"./ui/family":26,"./ui/nav":28,"react":"react"}],26:[function(require,module,exports){
+},{"../components/Button":5,"../components/Feature":6,"../components/FeatureList":7,"../components/Heading":8,"../components/PullQuote":9,"../components/Section":10,"./playground/button":24,"./ui":27,"./ui/family":26,"./ui/nav":29,"react":"react"}],26:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2212,19 +2212,23 @@ var _cmz = require('cmz');
 
 var _cmz2 = _interopRequireDefault(_cmz);
 
+var _linkify = require('./linkify');
+
+var _linkify2 = _interopRequireDefault(_linkify);
+
 var _index = require('./index.js');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var s = {
-  family: (0, _cmz2.default)('src_ui_family-11', [/*cmz|*/'min-height: 90vh' /*|cmz*/, /*cmz|*/'border-bottom: 1px solid hsl(0, 0%, 95%)' /*|cmz*/]),
+  family: (0, _cmz2.default)('src_ui_family-12', [/*cmz|*/'min-height: 90vh' /*|cmz*/, /*cmz|*/'margin-top: 5rem' /*|cmz*/, /*cmz|*/'border-bottom: 1px solid hsl(0, 0%, 95%)' /*|cmz*/]),
 
-  name: (0, _cmz2.default)('src_ui_family-16', [_index.mainColumn, _index.pad, _index.heading]),
+  name: (0, _cmz2.default)('src_ui_family-18', [_index.mainColumn, _index.pad, _index.heading]),
 
-  item: (0, _cmz2.default)('src_ui_family-22', _index.pad)
+  item: (0, _cmz2.default)('src_ui_family-24', _index.pad)
 };
 
-s.darkItem = (0, _cmz2.default)('src_ui_family-27', [s.item, /*cmz|*/'background: #333' /*|cmz*/, /*cmz|*/'color: #fff' /*|cmz*/]);
+s.darkItem = (0, _cmz2.default)('src_ui_family-29', [s.item, /*cmz|*/'background: #333' /*|cmz*/, /*cmz|*/'color: #fff' /*|cmz*/]);
 
 var Item = exports.Item = function Item(props) {
   var cx = [props.dark ? s.darkItem : s.item, props.fullWidth ? '' : _index.mainColumn];
@@ -2244,6 +2248,7 @@ var Family = exports.Family = function Family(props) {
   return _react2.default.createElement(
     'div',
     { className: s.family },
+    _react2.default.createElement('a', { name: (0, _linkify2.default)(props.name) }),
     _react2.default.createElement(
       'h2',
       { className: s.name },
@@ -2253,15 +2258,13 @@ var Family = exports.Family = function Family(props) {
   );
 };
 
-},{"./index.js":27,"cmz":11,"react":"react"}],27:[function(require,module,exports){
+},{"./index.js":27,"./linkify":28,"cmz":11,"react":"react"}],27:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Family = exports.Item = exports.main = exports.heading = exports.mainColumn = exports.pad = undefined;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+exports.main = exports.heading = exports.mainColumn = exports.pad = undefined;
 
 var _react = require('react');
 
@@ -2279,44 +2282,20 @@ var mainColumn = exports.mainColumn = (0, _cmz2.default)('src_ui_index-6', [/*cm
 
 var heading = exports.heading = (0, _cmz2.default)('src_ui_index-11', [/*cmz|*/'font-family: \'Helvetica Neue\', sans-serif' /*|cmz*/, /*cmz|*/'font-weight: 200' /*|cmz*/]);
 
-var main = exports.main = (0, _cmz2.default)('src_ui_index-16', [/*cmz|*/'margin-top: 5rem' /*|cmz*/, /*cmz|*/'max-width: 100%' /*|cmz*/, /*cmz|*/'overflow: hidden' /*|cmz*/]);
-
-var s = {
-  family: (0, _cmz2.default)('src_ui_index-23', [mainColumn, /*cmz|*/'min-height: 90vh' /*|cmz*/, /*cmz|*/'border-bottom: 1px solid hsl(0, 0%, 95%)' /*|cmz*/]),
-
-  name: (0, _cmz2.default)('src_ui_index-29', [pad, heading]),
-
-  item: (0, _cmz2.default)('src_ui_index-34', pad)
-};
-
-s.darkItem = (0, _cmz2.default)('src_ui_index-39', [s.item, /*cmz|*/'background: #333' /*|cmz*/, /*cmz|*/'color: #fff' /*|cmz*/]);
-
-var Item = exports.Item = function Item(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: props.dark ? s.darkItem : s.item },
-    props.children
-  );
-};
-
-Item.Heading = function (props) {
-  return _react2.default.createElement('h3', _extends({ className: heading }, props));
-};
-
-var Family = exports.Family = function Family(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: s.family },
-    _react2.default.createElement(
-      'h2',
-      { className: s.name },
-      props.name
-    ),
-    props.children
-  );
-};
+var main = exports.main = (0, _cmz2.default)('src_ui_index-16', [/*cmz|*/'max-width: 100%' /*|cmz*/, /*cmz|*/'overflow: hidden' /*|cmz*/]);
 
 },{"cmz":11,"react":"react"}],28:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function (val) {
+  return val.replace(/\W+/, '-');
+};
+
+},{}],29:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2331,6 +2310,10 @@ var _cmz = require('cmz');
 
 var _cmz2 = _interopRequireDefault(_cmz);
 
+var _linkify = require('./linkify');
+
+var _linkify2 = _interopRequireDefault(_linkify);
+
 var _logo = require('../../atoms/logo');
 
 var _logo2 = _interopRequireDefault(_logo);
@@ -2340,16 +2323,20 @@ var _index = require('./index.js');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var s = {
-  root: (0, _cmz2.default)('src_ui_nav-12', [/*cmz|*/'position: fixed' /*|cmz*/, /*cmz|*/'z-index: 10' /*|cmz*/, /*cmz|*/'width: 100%' /*|cmz*/, /*cmz|*/'top: 0' /*|cmz*/, /*cmz|*/'background: #fff' /*|cmz*/, /*cmz|*/'border-bottom: 1px solid hsl(0, 0%, 95%)' /*|cmz*/]),
+  root: (0, _cmz2.default)('src_ui_nav-13', [/*cmz|*/'position: fixed' /*|cmz*/, /*cmz|*/'z-index: 10' /*|cmz*/, /*cmz|*/'width: 100%' /*|cmz*/, /*cmz|*/'top: 0' /*|cmz*/, /*cmz|*/'background: #fff' /*|cmz*/, /*cmz|*/'border-bottom: 1px solid hsl(0, 0%, 95%)' /*|cmz*/]),
 
-  inner: (0, _cmz2.default)('src_ui_nav-21', [_index.mainColumn, /*cmz|*/'display: flex' /*|cmz*/, /*cmz|*/'justify-content: space-between' /*|cmz*/, /*cmz|*/'align-items: center' /*|cmz*/, /*cmz|*/'height: 4rem' /*|cmz*/]),
+  inner: (0, _cmz2.default)('src_ui_nav-22', [_index.mainColumn, /*cmz|*/'display: flex' /*|cmz*/, /*cmz|*/'justify-content: space-between' /*|cmz*/, /*cmz|*/'align-items: center' /*|cmz*/, /*cmz|*/'height: 4rem' /*|cmz*/]),
 
-  logo: (0, _cmz2.default)('src_ui_nav-29', [/*cmz|*/'width: 20rem' /*|cmz*/, /*cmz|*/'padding: 0 2rem' /*|cmz*/, /*cmz|*/'\n& span {\n  display: inline-block;\n  width: 2rem;\n  position: relative;\n  top: .5rem;\n  margin-right: .5rem;\n}\n      ' /*|cmz*/]),
+  logo: (0, _cmz2.default)('src_ui_nav-30', [/*cmz|*/'width: 20rem' /*|cmz*/, /*cmz|*/'padding: 0 2rem' /*|cmz*/, /*cmz|*/'\n& span {\n  display: inline-block;\n  width: 2rem;\n  position: relative;\n  top: .5rem;\n  margin-right: .5rem;\n}\n      ' /*|cmz*/]),
 
-  heading: (0, _cmz2.default)('src_ui_nav-43', [/*cmz|*/'flex-grow: 1' /*|cmz*/]),
+  heading: (0, _cmz2.default)('src_ui_nav-44', [/*cmz|*/'flex-grow: 1' /*|cmz*/]),
 
-  pageSelect: (0, _cmz2.default)('src_ui_nav-47', [/*cmz|*/'margin: 0 1rem' /*|cmz*/, /*cmz|*/'background: transparent' /*|cmz*/, /*cmz|*/'border: none' /*|cmz*/, /*cmz|*/'font-size: 1rem' /*|cmz*/])
+  pageSelect: (0, _cmz2.default)('src_ui_nav-48', [/*cmz|*/'margin: 0 1rem' /*|cmz*/, /*cmz|*/'background: transparent' /*|cmz*/, /*cmz|*/'border: none' /*|cmz*/, /*cmz|*/'font-size: 1rem' /*|cmz*/])
 };
+
+function navTo(name) {
+  location.hash = (0, _linkify2.default)(name);
+}
 
 exports.default = function (props) {
   var families = props.families;
@@ -2378,7 +2365,9 @@ exports.default = function (props) {
       ),
       _react2.default.createElement(
         'select',
-        { className: s.pageSelect },
+        { className: s.pageSelect, onChange: function onChange(event) {
+            return navTo(event.target.value);
+          } },
         families.map(function (f) {
           return _react2.default.createElement(
             'option',
@@ -2391,4 +2380,4 @@ exports.default = function (props) {
   );
 };
 
-},{"../../atoms/logo":3,"./index.js":27,"cmz":11,"react":"react"}]},{},[23]);
+},{"../../atoms/logo":3,"./index.js":27,"./linkify":28,"cmz":11,"react":"react"}]},{},[23]);
