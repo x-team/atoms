@@ -1,6 +1,7 @@
 import React from 'react'
 import cmz from 'cmz'
 
+import linkify from './linkify'
 import logo from '../../atoms/logo'
 
 import {
@@ -52,6 +53,10 @@ const s = {
   ])
 }
 
+function navTo (name) {
+  location.hash = linkify(name)
+}
+
 export default (props) => {
   const { families } = props
 
@@ -64,7 +69,7 @@ export default (props) => {
         </h1>
       </div>
       <div className={s.heading}>{props.heading}</div>
-      <select className={s.pageSelect}>
+      <select className={s.pageSelect} onChange={(event) => navTo(event.target.value)}>
         {families.map(f => <option key={f.name}>{f.name}</option>)}
       </select>
     </div>

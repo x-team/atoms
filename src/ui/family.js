@@ -1,6 +1,7 @@
 import React from 'react'
 import cmz from 'cmz'
 
+import linkify from './linkify'
 import {
   heading,
   mainColumn,
@@ -10,6 +11,7 @@ import {
 const s = {
   family: cmz([
     'min-height: 90vh',
+    'margin-top: 5rem',
     'border-bottom: 1px solid hsl(0, 0%, 95%)',
   ]),
 
@@ -45,6 +47,7 @@ export const ItemHeading = (props) => {
 
 export const Family = (props) => {
   return <div className={s.family}>
+    <a name={linkify(props.name)} />
     <h2 className={s.name}>{props.name}</h2>
     {props.children}
   </div>
