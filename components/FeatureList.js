@@ -32,8 +32,4 @@ const FeatureList = (props) => {
   </div>
 }
 
-FeatureList.propTypes = {
-  children: PropTypes.string.isRequired
-}
-
 export default FeatureList

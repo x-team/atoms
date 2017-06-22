@@ -93,7 +93,6 @@ const Section = (props) => {
 }
 
 Section.propTypes = {
-  children: PropTypes.string.isRequired,
   pic: PropTypes.string.isRequired
 };
 
