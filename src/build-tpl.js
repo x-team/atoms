@@ -28,6 +28,14 @@ const theme = cmz(`
 body {
   padding: 0;
   margin: 0;
+  font-family: sans-serif;
+}
+
+code {
+  background: #EEE;
+  color: #C63;
+  border-radius: 3px;
+  padding: 3px 4px;
 }
 `)
 
